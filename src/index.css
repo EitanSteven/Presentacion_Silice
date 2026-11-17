@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #070a12;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+}
+
+/* Bottom Glassmorphism Panel (strictly <= 45% viewport height) */
+.glass-bottom-panel {
+  background: linear-gradient(180deg, rgba(10, 15, 28, 0.72) 0%, rgba(7, 10, 18, 0.88) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.65);
+}
+
+/* Iridescent silicon wafer shimmer effect for Slide 00 */
+@keyframes wafer-sweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.wafer-iridescent-overlay {
+  background: linear-gradient(
+    115deg,
+    rgba(6, 182, 212, 0.14) 0%,
+    rgba(168, 85, 247, 0.16) 25%,
+    rgba(245, 158, 11, 0.12) 50%,
+    rgba(16, 185, 129, 0.14) 75%,
+    rgba(59, 130, 246, 0.14) 100%
+  );
+  background-size: 300% 300%;
+}
+
+.wafer-iridescent-text {
+  background: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #a5f3fc 25%,
+    #e9d5ff 50%,
+    #fde68a 75%,
+    #ffffff 100%
+  );
+  background-size: 260% 260%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wafer-iridescent-overlay {
+    animation: wafer-sweep 14s ease-in-out infinite;
+  }
+  .wafer-iridescent-text {
+    animation: wafer-sweep 11s ease-in-out infinite;
+  }
+}
