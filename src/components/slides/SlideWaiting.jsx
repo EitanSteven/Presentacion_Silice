@@ -36,16 +36,16 @@ export default function SlideWaiting({ slide, isCarouselPaused, preloadState, hi
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 32 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-bottom-panel absolute bottom-0 inset-x-0 max-h-[45vh] z-10 px-6 sm:px-12 lg:px-16 py-6 sm:py-8 overflow-hidden"
+            className="glass-bottom-panel absolute bottom-0 inset-x-0 max-h-[45vh] z-10 px-6 sm:px-12 lg:px-16 py-4 sm:py-6 overflow-y-auto"
           >
             {/* Iridescent subtle border highlight along top of panel */}
             <div className="absolute top-0 inset-x-0 h-[1.5px] wafer-iridescent-overlay opacity-90" />
 
-            <div className="max-w-7xl mx-auto flex flex-col justify-center gap-3 sm:gap-4">
+            <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2.5 sm:gap-3.5">
               <div className="flex items-center justify-between gap-4">
-                <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-[11px] font-semibold tracking-widest uppercase">
+                <div className="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-sm sm:text-base font-semibold tracking-widest uppercase">
                   <span
-                    className={`w-1.5 h-1.5 rounded-full ${
+                    className={`w-2 h-2 rounded-full ${
                       isPreloadDone ? 'bg-emerald-400' : 'bg-amber-400 animate-pulse'
                     }`}
                   />
@@ -53,7 +53,7 @@ export default function SlideWaiting({ slide, isCarouselPaused, preloadState, hi
                 </div>
 
                 {preloadState && preloadState.total > 0 && (
-                  <span className="text-[11px] font-mono text-slate-400/80 tracking-wider">
+                  <span className="text-sm sm:text-base font-mono text-slate-300/90 tracking-wider">
                     {isPreloadDone
                       ? 'Recursos listos'
                       : `Precargando ${preloadState.loaded}/${preloadState.total}`}
@@ -61,11 +61,11 @@ export default function SlideWaiting({ slide, isCarouselPaused, preloadState, hi
                 )}
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-tight wafer-iridescent-text">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold tracking-tight leading-tight wafer-iridescent-text">
                 {slide.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 border-t border-white/10 text-sm sm:text-base text-slate-200 font-light">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2.5 border-t border-white/10 text-lg sm:text-2xl lg:text-[1.75rem] text-slate-200 font-light">
                 <span className="font-medium text-white">{slide.student}</span>
                 <span className="text-slate-500 hidden sm:inline">|</span>
                 <span className="text-cyan-200/90">{slide.date}</span>

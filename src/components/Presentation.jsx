@@ -245,16 +245,16 @@ export default function Presentation() {
           aria-pressed={hidePanels}
           aria-label={hidePanels ? 'Mostrar panel de información (Enter)' : 'Ocultar panel de información (Enter)'}
           title={hidePanels ? 'Mostrar información (Enter)' : 'Ver solo imagen de fondo (Enter)'}
-          className={`interactive-control absolute top-4 right-5 z-40 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/65 hover:bg-slate-900/90 border border-white/15 backdrop-blur-md text-xs font-medium text-slate-200 shadow-lg transition-opacity duration-200 cursor-pointer ${
+          className={`interactive-control absolute top-4 right-5 z-40 inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-950/65 hover:bg-slate-900/90 border border-white/15 backdrop-blur-md text-sm sm:text-base font-medium text-slate-200 shadow-lg transition-opacity duration-200 cursor-pointer ${
             hidePanels ? 'opacity-70 hover:opacity-100 ring-1 ring-cyan-400/40' : 'opacity-35 hover:opacity-100'
           }`}
         >
           {hidePanels ? (
-            <Eye className="w-3.5 h-3.5 text-cyan-300" />
+            <Eye className="w-4 h-4 text-cyan-300" />
           ) : (
-            <EyeOff className="w-3.5 h-3.5 text-slate-300" />
+            <EyeOff className="w-4 h-4 text-slate-300" />
           )}
-          <span className="font-mono text-[10px] tracking-wider uppercase px-1.5 py-0.5 rounded bg-white/10 text-slate-200">
+          <span className="font-mono text-xs tracking-wider uppercase px-2 py-0.5 rounded bg-white/10 text-slate-200">
             Enter
           </span>
         </button>
@@ -277,7 +277,7 @@ export default function Presentation() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-4 left-5 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700/60 backdrop-blur-md text-xs font-mono font-medium text-slate-300 pointer-events-none z-40 shadow-xl"
+              className="absolute top-4 left-5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 backdrop-blur-md text-sm sm:text-base font-mono font-medium text-slate-300 pointer-events-none z-40 shadow-xl"
             >
               {String(activeSlide.id).padStart(2, '0')} / {String(totalSlides - 1).padStart(2, '0')}
             </motion.div>

@@ -27,32 +27,30 @@ export default function SlideReferences({ slide, hidePanels }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 32 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-bottom-panel absolute bottom-0 inset-x-0 max-h-[45vh] z-10 px-6 sm:px-12 lg:px-16 py-5 sm:py-6 overflow-y-auto"
+            className="glass-bottom-panel absolute bottom-0 inset-x-0 max-h-[45vh] z-10 px-6 sm:px-12 lg:px-16 py-4 sm:py-5 overflow-y-auto"
           >
             <div className="max-w-7xl mx-auto flex flex-col gap-3">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-400/30 text-teal-300 text-[11px] font-semibold tracking-widest uppercase">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
-                    {slide.tag}
-                  </div>
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
-                    {slide.title}
-                  </h2>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-500/10 border border-teal-400/30 text-teal-300 text-sm sm:text-base font-semibold tracking-widest uppercase">
+                  <span className="w-2 h-2 rounded-full bg-teal-400" />
+                  {slide.tag}
                 </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                  {slide.title}
+                </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
                 {slide.sources.map((src, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/65 border border-white/10 hover:border-teal-400/40 transition-colors"
+                    className="flex items-start gap-3 p-3 rounded-xl bg-slate-900/65 border border-white/10 hover:border-teal-400/40 transition-colors"
                   >
-                    <span className="w-5 h-5 rounded-md bg-teal-500/15 border border-teal-400/30 flex items-center justify-center shrink-0 font-mono text-[10px] font-bold text-teal-300 mt-0.5">
+                    <span className="w-7 h-7 rounded-lg bg-teal-500/15 border border-teal-400/30 flex items-center justify-center shrink-0 font-mono text-sm font-bold text-teal-300 mt-0.5">
                       {idx + 1}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold text-slate-100 leading-snug line-clamp-2">
+                      <p className="text-sm sm:text-base lg:text-lg font-semibold text-slate-100 leading-snug line-clamp-2">
                         {src.title}
                       </p>
                       <a
@@ -61,7 +59,7 @@ export default function SlideReferences({ slide, hidePanels }) {
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                         onMouseDown={(e) => e.stopPropagation()}
-                        className="interactive-control text-[10px] text-teal-300/90 hover:text-teal-200 underline underline-offset-2 truncate block mt-1"
+                        className="interactive-control text-xs sm:text-sm text-teal-300/90 hover:text-teal-200 underline underline-offset-2 truncate block mt-1"
                         title={src.url}
                       >
                         {src.url}
